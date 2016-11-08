@@ -29,7 +29,7 @@ export default function (state = defaultState, action) {
           id: Date.now(),
           name: state.name
         })
-      }
+      };
     }
     case ActionTypes.TODO_CHANGE_STATUS:
     {
@@ -42,7 +42,7 @@ export default function (state = defaultState, action) {
           ...item,
           done: ! item.done
         }})
-      }
+      };
     }
   }
 

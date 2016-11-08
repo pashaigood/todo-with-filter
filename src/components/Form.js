@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default (props) =>
+const Form = (props) =>
 <div>
   <input
     value={props.name}
@@ -9,3 +9,14 @@ export default (props) =>
   />
   <button onClick={() => props.onAdd()}>Add</button>
 </div>
+;
+
+
+Form.propTypes = {
+  name: React.PropTypes.string.isRequired,
+  onChange: React.PropTypes.func.isRequired,
+  onAdd: React.PropTypes.func.isRequired
+};
+
+
+export default Form;

@@ -2,7 +2,7 @@ import * as ActionTypes from '../constants/ActionTypes';
 
 export function addTodo() {
   return {
-    type: ActionTypes.TODO_ADD,
+    type: ActionTypes.TODO_ADD
   }
 }
 
