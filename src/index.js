@@ -7,4 +7,3 @@ import Todos from './containers/Todos';
 const store = configureStore();
 
 ReactDOM.render(<Provider store={store}><Todos/></Provider>, document.getElementById('app'));
-
