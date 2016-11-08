@@ -1,8 +1,11 @@
 import * as ActionTypes from '../constants/ActionTypes';
 
 const defaultState = {
-  items: [],
-  name: ''
+  name: '',
+  filter: {
+    done: null
+  },
+  items: []
 };
 
 /**
@@ -10,6 +13,7 @@ const defaultState = {
  * @param state
  * @param action
  * @param {string} action.type
+ * @param {any} action.payload
  */
 export default function (state = defaultState, action) {
   switch (action.type) {
@@ -27,7 +31,8 @@ export default function (state = defaultState, action) {
         name: '',
         items: state.items.concat({
           id: Date.now(),
-          name: state.name
+          name: state.name,
+          done: false
         })
       };
     }
@@ -42,6 +47,16 @@ export default function (state = defaultState, action) {
           ...item,
           done: ! item.done
         }})
+      };
+    }
+    case ActionTypes.TODO_FILTER_CHANGE:
+    {
+      return {
+        ...state,
+        filter: {
+          ...state.filter,
+          ...action.payload
+        }
       };
     }
   }

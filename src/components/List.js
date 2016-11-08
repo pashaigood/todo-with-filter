@@ -1,9 +1,10 @@
 import React from 'react';
+import TodoStatuses from '../constants/TodoStatuses';
 
 const List = (props) =>
 <ul>
   {
-    props.items.map((item) =>
+    props.items.filter(item => props.filter.done === TodoStatuses.ALL || item.done === props.filter.done).map((item) =>
         <li
           onClick={() => props.onStatusChange(item.id)}
           key={item.id}
@@ -15,6 +16,7 @@ const List = (props) =>
 ;
 
 List.propTypes = {
+  filter: React.PropTypes.object.isRequired,
   items: React.PropTypes.array.isRequired,
   onStatusChange: React.PropTypes.func.isRequired
 };

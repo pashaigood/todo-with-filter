@@ -1,20 +1,23 @@
 import React from 'react';
+import TodoStatuses from '../constants/TodoStatuses';
 
 export default class Filter extends React.Component {
 
   static propTypes = {
-
+    filter: React.PropTypes.object.isRequired,
+    onChange: React.PropTypes.func.isRequired
   };
-
-  onChange() {
-  }
 
   render() {
     return (
-      <select name="done" id="" onChange={this.onChange.bind(this)}>
-        <option>Select status</option>
-        <option value="true">Done</option>
-        <option value="false">Undone</option>
+      <select
+        name="done"
+        value={this.props.filter.done+''}
+        onChange={event => this.props.onChange({done: event.target.value == TodoStatuses.ALL ? TodoStatuses.ALL : event.target.value == 'true'})}
+      >
+        <option value={TodoStatuses.ALL}>All</option>
+        <option value={TodoStatuses.DONE}>Done</option>
+        <option value={TodoStatuses.UNDONE}>Undone</option>
       </select>
     );
   }

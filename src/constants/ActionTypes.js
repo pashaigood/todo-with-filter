@@ -1,3 +1,4 @@
 export const TODO_ADD = 'TODO_ADD';
 export const TODO_CHANGE_NAME = 'TODO_CHANGE_NAME';
 export const TODO_CHANGE_STATUS = 'TODO_CHANGE_STATUS';
+export const TODO_FILTER_CHANGE = 'TODO_FILTER_CHANGE';
