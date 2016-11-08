@@ -10,7 +10,7 @@ import * as todo from '../actions/todo';
 class Todos extends React.Component {
   static propTypes = {
     name: React.PropTypes.string.isRequired,
-    items: React.PropTypes.string.isRequired,
+    items: React.PropTypes.array.isRequired,
     changeName: React.PropTypes.func.isRequired,
     addTodo: React.PropTypes.func.isRequired,
     changeTodoStatus: React.PropTypes.func.isRequired
